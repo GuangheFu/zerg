@@ -22,7 +22,7 @@ class Theme
     public function getComplexOne($id){
         (new IDMustBePositiveInt())->goCheck();
         $result = ThemeModel::getThemeWithProducts($id);
-        if($result->isEmpty()){
+        if(!$result){
             throw new ThemeException();
         }
         return $result;
