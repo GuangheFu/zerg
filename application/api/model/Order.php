@@ -23,10 +23,10 @@ class Order extends BaseModel
     }
 
     public static function getSummaryByUser($uid,$page=1,$size=15){
-        $pageData = self::where('user_uid','=',$uid)
+        $pagingData = self::where('user_id', '=', $uid)
             ->order('create_time desc')
-            ->pageinate($size,true,['page'=>$page]);
-        return $pageData;    
+            ->paginate($size, true, ['page' => $page]);
+        return $pagingData ;    
     }
 
     public static function getSummaryByPage($page=1, $size=20){

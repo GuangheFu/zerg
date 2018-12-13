@@ -38,8 +38,10 @@ Route::get('api/v1/category/all','api/v1.Category/getAllCategories');
 
 Route::post('api/v1/token/user','api/v1.Token/getToken');
 Route::post('api/v1/token/app', 'api/v1.Token/getAppToken');
+Route::post('api/v1/token/verify', 'api/v1.Token/verifyToken');
 
-Route::post('api/v1/address','api/v1.Address/createOrUpdateAddress');
+Route::post('api/v1/address', 'api/v1.Address/createOrUpdateAddress');
+Route::get('api/v1/address', 'api/v1.Address/getUserAddress');
 
 Route::post('api/v1/order','api/v1.Order/placeOrder');
 Route::get('api/v1/order/:id','api/v1.Order/getDetail',[],['id'=>'\d+']);
